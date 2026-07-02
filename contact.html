@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Commspur Collective</title>
+  <meta name="description" content="Start a conversation with Commspur Collective — every engagement begins with a single honest conversation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="header-bar">
+      <a href="index.html" class="brand">
+        <img class="brand-mark" src="assets/logo-mark.svg" alt="Commspur Collective logo" />
+        <span class="brand-text">
+          <span class="brand-word">COMMS<em>PUR</em></span>
+          <span class="brand-sub">COLLECTIVE</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="work.html#insights">Insights</a>
+      </nav>
+
+      <a href="contact.html" class="btn btn-yellow header-cta">Let's talk <span class="arrow">→</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="block block-navy page-hero hero">
+      <div class="block-inner">
+        <span class="eyebrow eyebrow-ghost">The Call</span>
+        <h1>Every engagement begins with a conversation.</h1>
+        <p class="page-hero-sub">Tell us where your narrative stands and where your work is headed. We'll bring the questions.</p>
+      </div>
+    </section>
+
+    <!-- ============ INQUIRY FORM (postcard) ============ -->
+    <section class="contact-section" id="contact">
+      <div class="block-inner">
+        <div class="postcard-scene reveal">
+          <div class="postcard-back" aria-hidden="true">
+            <img src="assets/web/scene-courtyard.png" alt="" />
+          </div>
+
+          <svg class="paperclip" viewBox="0 0 44 88" aria-hidden="true">
+            <path d="M30 12 a9 9 0 0 0 -18 0 v52 a13 13 0 0 0 26 0 V22" fill="none" stroke="#b39059" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M30 12 v50 a5 5 0 0 1 -10 0 V26" fill="none" stroke="#b39059" stroke-width="4.5" stroke-linecap="round"/>
+          </svg>
+
+          <div class="postcard">
+            <div class="postcard-left">
+              <span class="eyebrow">Inquiry Form</span>
+              <h2 class="postcard-title">Connect with us.</h2>
+              <img class="postcard-figures" src="assets/web/figures-sitting.png" alt="Three Commspur figures sitting in conversation" loading="lazy" />
+              <div class="postcard-address">
+                <svg class="postcard-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#a8392e"/></svg>
+                <p><strong>Mailing Address:</strong><br />Commspur Collective,<br />Mumbai, India<br /><a href="mailto:hello@commspur.co">hello@commspur.co</a></p>
+              </div>
+            </div>
+
+            <div class="postcard-divider" aria-hidden="true"></div>
+
+            <div class="postcard-right">
+              <div class="postcard-postage" aria-hidden="true">
+                <img class="postage-lines" src="assets/web/lines-horizontal.png" alt="" />
+                <span class="postage-stamp"><img src="assets/web/spiral.png" alt="" /></span>
+              </div>
+
+              <form class="postcard-form" id="contactForm" novalidate>
+                <div class="form-row">
+                  <label>Name
+                    <input type="text" name="name" autocomplete="name" required />
+                  </label>
+                  <label>Email
+                    <input type="email" name="email" autocomplete="email" required />
+                  </label>
+                </div>
+                <label>Organization
+                  <input type="text" name="organization" autocomplete="organization" />
+                </label>
+                <label>Subject
+                  <input type="text" name="subject" />
+                </label>
+                <label>Message
+                  <textarea name="message" rows="4" required></textarea>
+                </label>
+                <div class="form-foot">
+                  <span class="form-status" id="formStatus" role="status" aria-live="polite"></span>
+                  <button type="submit" class="postcard-submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ EMAIL + LINKEDIN ============ -->
+        <div class="contact-cards" data-stagger>
+          <div class="contact-card">
+            <h3>Email</h3>
+            <p>For new engagements, collaborations, or a simple hello — we read everything.</p>
+            <a href="mailto:hello@commspur.co" class="case-link">hello@commspur.co <span class="arrow">→</span></a>
+          </div>
+          <div class="contact-card">
+            <h3>LinkedIn</h3>
+            <p>Follow our thinking between engagements, or reach us directly where we publish.</p>
+            <a href="#contact" class="case-link">Connect on LinkedIn <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand brand-light">
+            <img class="brand-mark" src="assets/logo-mark.svg" alt="Commspur Collective logo" />
+            <span class="brand-text">
+              <span class="brand-word">COMMS<em>PUR</em></span>
+              <span class="brand-sub">COLLECTIVE</span>
+            </span>
+          </a>
+          <p>Strategic communication and narrative advisory for the social impact sector. We help organizations tell the stories that matter.</p>
+          <div class="footer-socials">
+            <a href="#footer" aria-label="LinkedIn">in</a>
+            <a href="#footer" aria-label="Twitter / X">&#120143;</a>
+            <a href="#footer" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Pages</h5>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="work.html">Work</a>
+          <a href="work.html#insights">Insights</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="#footer">LinkedIn</a>
+          <a href="work.html#resources">The Commspur Letter</a>
+          <a href="mailto:hello@commspur.co">hello@commspur.co</a>
+          <a href="contact.html" class="btn btn-yellow footer-btn">Let's talk <span class="arrow">→</span></a>
+        </div>
+
+        <div class="footer-figures">
+          <img src="assets/web/figures-standing.png" alt="Three Commspur figures standing hand in hand" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 Commspur Collective. All rights reserved.</span>
+        <span class="footer-legal">
+          <a href="#footer">Privacy Policy</a>
+          <a href="#footer">Terms of Service</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

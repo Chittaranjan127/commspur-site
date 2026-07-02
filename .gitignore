@@ -1,0 +1,5 @@
+# MCP / tool logs
+logs/
+
+# OS cruft
+.DS_Store

@@ -45,7 +45,7 @@
 
   // ---------- Seamless logo marquee ----------
   var track = document.getElementById("marqueeTrack");
-  track.innerHTML += track.innerHTML;
+  if (track) track.innerHTML += track.innerHTML;
 
   // ---------- Stat number count-up ----------
   function countUp(el) {
@@ -154,7 +154,7 @@
 
     // word-by-word headline reveals
     var headlines = document.querySelectorAll(
-      ".hero h1, .challenge-copy h2, .section-head h2, .evidence-head h2, .cta-copy h2"
+      ".hero h1, .page-hero h1, .challenge-copy h2, .section-head h2, .evidence-head h2, .cta-copy h2"
     );
 
     headlines.forEach(function (el) {
@@ -198,6 +198,42 @@
       });
     });
 
+  }
+
+  // ---------- Work page: topic/service filters ----------
+  var workList = document.querySelector(".work-list");
+
+  if (workList) {
+    var filterState = { topics: "all", services: "all" };
+
+    function applyFilters() {
+      workList.querySelectorAll(".work-item").forEach(function (item) {
+        var topicOk = filterState.topics === "all" || item.getAttribute("data-topics") === filterState.topics;
+        var serviceOk = filterState.services === "all" || item.getAttribute("data-services") === filterState.services;
+        item.classList.toggle("hidden", !(topicOk && serviceOk));
+      });
+    }
+
+    document.querySelectorAll(".filter-chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        var group = chip.getAttribute("data-group");
+        chip.closest(".filter-group").querySelectorAll(".filter-chip").forEach(function (c) {
+          c.classList.remove("active");
+        });
+        chip.classList.add("active");
+        filterState[group] = chip.getAttribute("data-value");
+        applyFilters();
+      });
+    });
+
+    // expandable case studies
+    document.querySelectorAll(".work-head").forEach(function (head) {
+      head.addEventListener("click", function () {
+        var item = head.closest(".work-item");
+        var isOpen = item.classList.toggle("open");
+        head.setAttribute("aria-expanded", String(isOpen));
+      });
+    });
   }
 
   // ---------- Contact form ----------
