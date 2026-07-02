@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commspur Website Development Costing Breakup</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #20242f;
+      --navy: #1d2434;
+      --cream: #f7e3c9;
+      --cream-soft: #faf3e4;
+      --white: #fffdf8;
+      --brick: #a8392e;
+      --orange: #e96d3a;
+      --yellow: #f6c64a;
+      --muted: #6e7280;
+      --line: #ece2cd;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "DM Sans", -apple-system, sans-serif;
+      background: #f1e8d7;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .sheet {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(32, 36, 47, 0.12);
+    }
+
+    /* header */
+    .sheet-head {
+      background: var(--navy);
+      color: #f6f2e8;
+      padding: 40px 48px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .sheet-head h1 {
+      font-size: 26px;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
+    }
+
+    .sheet-head p { color: #98a0b0; font-size: 13px; }
+
+    .doc-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      border: 1px solid rgba(246, 198, 74, 0.5);
+      border-radius: 999px;
+      padding: 6px 14px;
+      white-space: nowrap;
+    }
+
+    /* meta row */
+    .sheet-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      padding: 24px 48px;
+      background: var(--cream-soft);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sheet-meta h4 {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .sheet-meta p { font-size: 13.5px; font-weight: 500; }
+
+    /* table */
+    .sheet-body { padding: 36px 48px 44px; }
+
+    table { width: 100%; border-collapse: collapse; }
+
+    thead th {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brick);
+      text-align: left;
+      padding: 0 12px 12px 0;
+      border-bottom: 1.5px solid var(--ink);
+    }
+
+    thead th:last-child { text-align: right; padding-right: 0; }
+
+    tbody td {
+      padding: 18px 12px 18px 0;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody td:last-child {
+      text-align: right;
+      padding-right: 0;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tbody h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+
+    tbody p { font-size: 12.5px; color: var(--muted); max-width: 480px; }
+
+    tfoot td {
+      padding: 20px 12px 0 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    tfoot td:last-child {
+      text-align: right;
+      padding-right: 0;
+      font-size: 20px;
+      color: var(--brick);
+      white-space: nowrap;
+    }
+
+    .amount-words {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: right;
+      margin-top: 6px;
+    }
+
+    /* terms */
+    .sheet-terms {
+      margin-top: 40px;
+      background: var(--cream-soft);
+      border-left: 4px solid var(--yellow);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+
+    .sheet-terms h2 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brick);
+      margin-bottom: 12px;
+    }
+
+    .sheet-terms ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sheet-terms li { font-size: 12.5px; color: #4a4e59; }
+
+    .sheet-terms li strong { font-weight: 600; color: var(--ink); }
+
+    .highlight {
+      font-weight: 600;
+      color: var(--ink);
+      background: rgba(246, 198, 74, 0.45);
+      border-radius: 4px;
+      padding: 1px 5px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* footer */
+    .sheet-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      padding: 28px 48px 36px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sheet-foot .sign h4 {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .sheet-foot .sign p {
+      border-top: 1px solid var(--ink);
+      padding-top: 6px;
+      font-size: 12.5px;
+      min-width: 200px;
+    }
+
+    .sheet-foot small { font-size: 11px; color: var(--muted); }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .sheet { box-shadow: none; border-radius: 0; max-width: none; }
+      .sheet-head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .sheet-meta, .sheet-terms { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    @media (max-width: 640px) {
+      .sheet-head, .sheet-meta, .sheet-body, .sheet-foot { padding-left: 24px; padding-right: 24px; }
+      .sheet-meta { grid-template-columns: 1fr; }
+      .sheet-foot { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sheet">
+
+    <div class="sheet-head">
+      <div>
+        <h1>Commspur Website Development Costing Breakup</h1>
+        <p>Commspur Collective — Website Design &amp; Development</p>
+      </div>
+      <span class="doc-tag">Costing</span>
+    </div>
+
+    <div class="sheet-meta">
+      <div>
+        <h4>Client</h4>
+        <p>Commspur Collective</p>
+      </div>
+      <div>
+        <h4>Date</h4>
+        <p>02 July 2026</p>
+      </div>
+      <div>
+        <h4>Delivery Timeline</h4>
+        <p>1 Week</p>
+      </div>
+    </div>
+
+    <div class="sheet-body">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Amount (INR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <h3>Designing Cost</h3>
+              <p>UI/UX design of all pages (Home, About, Services, Work, Contact), brand element integration, typography &amp; color system, responsive layouts, and design revisions during the build.</p>
+            </td>
+            <td>&#8377; 9,000</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Development Cost</h3>
+              <p>Front-end development of 5 pages with animations and interactions, work-page filters with expandable case studies, inquiry form, and cross-device responsiveness.</p>
+            </td>
+            <td>&#8377; 20,000</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>One-Time Setup Cost</h3>
+              <p>Project setup, domain &amp; DNS configuration, business email wiring, and favicon setup.</p>
+            </td>
+            <td>&#8377; 5,000</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Deployment + Hosting Cost</h3>
+              <p>Production deployment, SSL certificate, and hosting for the first year. <span class="highlight">From the next year onward, hosting is charged at &#8377; 5,000 per year.</span></p>
+            </td>
+            <td>&#8377; 6,000</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Website Analytics</h3>
+              <p>Analytics setup to track visitors, traffic sources, and page performance.</p>
+            </td>
+            <td>&#8377; 0</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>SEO Friendly Setup</h3>
+              <p>Search-engine friendly structure &mdash; meta titles &amp; descriptions, semantic markup, and indexing basics.</p>
+            </td>
+            <td>&#8377; 0</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td>&#8377; 40,000</td>
+          </tr>
+        </tfoot>
+      </table>
+      <p class="amount-words">Rupees Forty Thousand Only</p>
+
+      <div class="sheet-terms">
+        <h2>Terms &amp; Notes</h2>
+        <ol>
+          <li><strong>Any changes or updates related to the website after delivery are chargeable</strong>, and will be quoted separately as per the subject and scope of the requested change.</li>
+          <li><strong>Payment terms:</strong> 25% (&#8377; 10,000) advance before development begins; the remaining 75% (&#8377; 30,000) payable after deployment.</li>
+          <li><strong>Delivery timeline:</strong> the website will be delivered within 1 week, counted from receipt of the advance payment and complete website content.</li>
+          <li><strong>Support window:</strong> 15 days of free bug-fix support after deployment. This covers defects in the delivered work only; new features, content changes, or enhancements remain chargeable as per note 1.</li>
+          <li><strong>Dependencies:</strong> the delivery timeline depends on timely inputs from the client &mdash; content, images, approvals, and any required credentials. Delays in client inputs extend the timeline accordingly.</li>
+          <li><strong>Cancellation:</strong> if the project is cancelled after development begins, the 25% advance is non-refundable; any work completed beyond the advance is billable proportionately.</li>
+          <li>The above costing covers one design and development cycle of the agreed 5-page website; new pages, features, or third-party integrations are outside this scope.</li>
+          <li>Hosting is covered for the first year; <span class="highlight">from the next year onward, hosting renewal is charged at &#8377; 5,000 per year.</span> Domain renewal is billed separately at actuals.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sheet-foot">
+      <div class="sign">
+        <h4>Authorised Signature</h4>
+        <p>&nbsp;</p>
+      </div>
+      <small>This costing sheet is valid for 30 days from the date above.</small>
+    </div>
+
+  </div>
+
+</body>
+</html>
